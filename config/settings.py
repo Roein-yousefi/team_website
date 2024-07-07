@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'accounts',
+
+    # 'crispy_forms',
+    # 'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +59,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [str(BASE_DIR.joinpath('templates'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,3 +126,19 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
+# LOGIN_REDIRECT_URL = 'book_list'
+# LOGOUT_REDIRECT_URL = 'book_list'
+#
+# CRISPY_TEMPLATE_PACK = 'bootstrap5'
+# CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+# #
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+#
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
