@@ -771,3 +771,19 @@ section {
     font-size: 16px; } }
 
 /*=====  End of RESPONSIVE  ======*/
+
+
+@font-face {
+    font-family: "BYekan";
+    src: url("../fonts/BYekan+.ttf");
+}
+@font-face {
+    font-family: "BYekan";
+    src: url("../fonts/BYekan+ Bold.ttf");
+    font-weight: bold;
+}
+
+* {
+    font-family: 'BYekan', sans-serif;
+    line-height: 1.8rem;
+}

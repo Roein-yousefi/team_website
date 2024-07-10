@@ -1,73 +1,166 @@
 {% extends '_base.html' %}
 {% load static %}
 {% block content %}
-    <section id="features" class="bg-white">
+    <head>
+        <link rel="stylesheet" href="{% static 'css/mycss.css' %}">
+    </head>
+    <section id="features" class="bg-dark">
         <div class="container">
             <div class="section-content">
                 <!-- Section Title -->
-                <div class="title-wrap mb-5" data-aos="fade-up">
+                <div class="title-wrap mb-5" data-aos="fade-up" style="color: white;">
                     <h2 class="section-title">
-                        A template built by <a href="https://gettemplates.co" target="_blank">GetTemplates.co</a>
+                        <h3 style="font-weight: bold;">اخرین اخبار پرسپولیس</h3>
+
                     </h2>
-                    <p class="section-sub-title">Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-                        <br> pharetra augue. Donec id elit non mi.</p>
                 </div>
                 <!-- End of Section Title -->
                 <div class="row">
                     <!-- Features Holder-->
-                    <div class="col-md-10 offset-md-1 features-holder">
+                    <div class="offset-md-1 features-holder">
                         <div class="row">
                             <!-- Features Item -->
                             <div class="col-md-4 col-sm-12 text-center mt-4">
-                                <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
-                                    <div class="my-4">
-                                        <i class="lnr lnr-cog fs-40"></i>
+                                <div class="shadow rounded feature-item mb-4" data-aos="fade-up">
+
+                                    <div class="card-container">
+                                        <div class="card border-black">
+                                            <div class="img-content">
+                                                <img src="{% static 'img/photo_2024-06-25_10-43-2735.jpg' %}"
+                                                     class="card-img-top"
+                                                     alt="...">
+                                            </div>
+                                            <div class="content">
+                                                <p class="heading">Card Hover</p>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipii
+                                                    voluptas ten mollitia pariatur odit, ab
+                                                    minus ratione adipisci accusamus vel est excepturi laboriosam magnam
+                                                    necessitatibus dignissimos molestias.
+                                                </p>
+
+                                            </div>
+
+                                            <button id="bottone1"><strong>اخبار پرسپولیس</strong></button>
+                                        </div>
                                     </div>
-                                    <h4>Easy to Customize</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
                                 </div>
-                                <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
-                                    <div class="my-4">
-                                        <i class="lnr lnr-frame-contract fs-40"></i>
+                                <div class="shadow rounded feature-item mb-4" data-aos="fade-up">
+
+                                    <div class="card-container">
+                                        <div class="card">
+                                            <div class="img-content">
+                                                <img src="{% static 'img/1ebd09071cd341948e5d5d8afef001d9.jpg' %}"
+                                                     class="card-img-top" alt="...">
+                                            </div>
+                                            <div class="content">
+                                                <p class="heading">Card Hover</p>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipii
+                                                    voluptas ten mollitia pariatur odit, ab
+                                                    minus ratione adipisci accusamus vel est excepturi laboriosam magnam
+                                                    necessitatibus dignissimos molestias.
+                                                </p>
+                                            </div>
+                                            <button id="bottone1"><strong>اخبار پرسپولیس</strong></button>
+                                        </div>
                                     </div>
-                                    <h4>Pixel Perfect</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
                                 </div>
                             </div>
                             <!-- End of Feature Item -->
                             <!-- Features Item -->
                             <div class="col-md-4 col-sm-12 text-center">
-                                <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
-                                    <div class="my-4">
-                                        <i class="lnr lnr-bubble fs-40"></i>
+                                <div class="shadow rounded feature-item mb-4" data-aos="fade-up">
+
+                                    <div class="card-container">
+                                        <div class="card">
+                                            <div class="img-content">
+                                                <img src="{% static 'img/perspolislogo7276.png' %}" class="card-img-top"
+                                                     alt="...">
+                                            </div>
+                                            <div class="content">
+                                                <p class="heading">Card Hover</p>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipii
+                                                    voluptas ten mollitia pariatur odit, ab
+                                                    minus ratione adipisci accusamus vel est excepturi laboriosam magnam
+                                                    necessitatibus dignissimos molestias.
+                                                </p>
+                                            </div>
+                                            <button id="bottone1"><strong>اخبار پرسپولیس</strong></button>
+                                        </div>
                                     </div>
-                                    <h4>Full Support</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
                                 </div>
-                                <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
-                                    <div class="my-4">
-                                        <i class="lnr lnr-magic-wand fs-40"></i>
+                                <div class="shadow rounded feature-item mb-4" data-aos="fade-up">
+
+                                    <div class="card-container">
+                                        <div class="card">
+                                            <div class="img-content">
+                                                <img src="{% static 'img/photo_2_2024-03-30_17-01-02.png' %}"
+                                                     class="card-img-top"
+                                                     alt="...">
+                                            </div>
+                                            <div class="content">
+                                                <p class="heading">Card Hover</p>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipii
+                                                    voluptas ten mollitia pariatur odit, ab
+                                                    minus ratione adipisci accusamus vel est excepturi laboriosam magnam
+                                                    necessitatibus dignissimos molestias.
+                                                </p>
+                                            </div>
+                                            <button id="bottone1"><strong>اخبار پرسپولیس</strong></button>
+                                        </div>
                                     </div>
-                                    <h4>Clean Design</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
                                 </div>
                             </div>
                             <!-- End of Feature Item -->
                             <!-- Features Item -->
                             <div class="col-md-4 col-sm-12 text-center mt-4">
-                                <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
-                                    <div class="my-4">
-                                        <i class="lnr lnr-clock fs-40"></i>
+                                <div class="shadow rounded feature-item mb-4" data-aos="fade-up">
+
+                                    <div class="card-container">
+                                        <div class="card">
+                                            <div class="img-content">
+                                                <img src="{% static 'img/photo_4_2024-03-30_17-01-02.png' %}"
+                                                     class="card-img-top"
+                                                     alt="...">
+                                            </div>
+                                            <div class="content">
+                                                <p class="heading">Card Hover</p>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipii
+                                                    voluptas ten mollitia pariatur odit, ab
+                                                    minus ratione adipisci accusamus vel est excepturi laboriosam magnam
+                                                    necessitatibus dignissimos molestias.
+                                                </p>
+                                            </div>
+                                            <button id="bottone1"><strong>اخبار پرسپولیس</strong></button>
+                                        </div>
                                     </div>
-                                    <h4>Ontime Project</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
                                 </div>
-                                <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
-                                    <div class="my-4">
-                                        <i class="lnr lnr-thumbs-up fs-40"></i>
+                                <div class="shadow rounded feature-item mb-4" data-aos="fade-up">
+
+                                    <div class="card-container">
+                                        <div class="card">
+                                            <div class="img-content">
+                                                <img src="{% static 'img/photo_2024-07-07_12-50-14.png' %}"
+                                                     class="card-img-top"
+                                                     alt="...">
+
+                                            </div>
+                                            <div class="content">
+                                                <p class="heading">Card Hover</p>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipii
+                                                    voluptas ten mollitia pariatur odit, ab
+                                                    minus ratione adipisci accusamus vel est excepturi laboriosam magnam
+                                                    necessitatibus dignissimos molestias.
+                                                </p>
+                                            </div>
+                                            <button id="bottone1"><strong>اخبار پرسپولیس</strong></button>
+                                        </div>
                                     </div>
-                                    <h4>Built with SASS</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
                                 </div>
                             </div>
                             <!-- End of Feature Item -->
@@ -80,71 +173,80 @@
     </section>
     <!-- End of Features Section-->
     <section id="section-featurettes" class="featurettes overlay bg-fixed" style="background-image: url(img/bg.jpg);">
+    <div class="jumbotron d-flex align-items-center" style="background: url('{% static "img/5910920.jpg" %}') no-repeat center center; background-size: cover; min-height: 300px;">
 
-        <div class="container">
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="row align-items-center text-white">
-
-                            <div class="col-md-4 offset-md-2 col-sm-6" data-aos="fade-right">
-                                <h4 class="mb-4">Capture every moments and share it to all your friends</h4>
-                                <p>Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius
-                                    blandit sit amet non magna. Cras mattis consectetur purus sit amet.</p>
-                                <button type="button" class="btn btn-outline-primary">FEATURES</button>
-                            </div><!--/ .col-md-4.col-md-offset-2.col-sm-6 -->
-
-                            <div class="col-md-4 offset-md-right-2 col-sm-6" data-aos="flip-right">
-                                <img class="my-5" src="{% static 'img/app-profile-mockup.png' %}" alt="">
-                            </div><!--/ .col-md-4.col-md-offset-right-2.col-sm-6 -->
-
-                        </div><!--/ .featurettes-item -->
-
-                    </div><!--/ .col-md-12 -->
-
-                </div><!--/ .row -->
-            </div>
-        </div><!--/ .container -->
-
+    <div class="container">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row align-items-center text-white">
+                        <div class="col-md-4 offset-md-2 col-sm-6" data-aos="fade-right">
+                            <h2 class="mb-4" style="font-weight: bold;">فروشگاه پرسپولیس</h2>
+                            <h3 style="font-weight: bold;">به فروشگاهمون یه سر بزن خوشت میاد</h3>
+                            <button type="button" class="btn btn-outline-primary">FEATURES</button>
+                        </div><!--/ .col-md-4.col-md-offset-2.col-sm-6 -->
+                        <div class="parent" style="width: 300px; padding: 20px; perspective: 1000px;">
+                            <div class="ccard" style="padding-top: 0px; border: 3px solid rgb(255, 255, 255); transform-style: preserve-3d; background: linear-gradient(135deg,#0000 18.75%,#f3f3f3 0 31.25%,#0000 0), repeating-linear-gradient(45deg,#f3f3f3 -6.25% 6.25%,#ffffff 0 18.75%); background-size: 60px 60px; background-position: 0 0, 0 0; background-color: #f0f0f0; width: 100%; box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px; transition: all 0.9s ease-in-out; position: relative; overflow: hidden; height: auto;">
+                                <div class="content-box" style="position: relative; z-index: 1; background: rgba(4, 193, 250, 0.732); padding: 60px 25px 25px 25px; transform-style: preserve-3d;">
+                                    <img src="{% static 'img/photo1720646887.png' %}" class="card-img-top" alt="..." style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+                                    <span class="ccard-title" style="display: inline-block; color: white; font-size: 25px; font-weight: 900; transition: all 0.5s ease-in-out; transform: translate3d(0px, 0px, 50px);"></span>
+                                    <p class="ccard-content" style="margin-top: 10px; font-size: 12px; font-weight: 700; color: #f2f2f2; transition: all 0.5s ease-in-out; transform: translate3d(0px, 0px, 30px);">
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                    </p>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                        </div><!--/ .col-md-4.col-md-offset-right-2.col-sm-6 -->
+                    </div><!--/ .featurettes-item -->
+                </div><!--/ .col-md-12 -->
+            </div><!--/ .row -->
+        </div>
+    </div><!--/ .container -->
+</div>
     </section>
-    <section id="section-featurettes" class="featurettes">
+    <section id="section-featurettes" class="featurettes bg-dark">
 
-        <div class="container">
+        <div class="container bg-dark">
             <div class="section-content">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="row align-items-center">
+                        <div class="row align-items-center ">
 
-                            <div class="col-md-4 offset-md-2 col-sm-6" data-aos="flip-left">
-                                <img class="my-5" src="{% static 'img/app-profile-mockup.png' %}" alt="">
+                            <div class="col-md-4 offset-md-2 col-sm-6 ذ" data-aos="flip-left">
+                                <img class="my-5 border" src="{% static 'img/299565.jpg' %}" alt="">
                             </div><!--/ .col-md-4.col-md-offset-right-2.col-sm-6 -->
 
-                            <div class="col-md-4 offset-md-right-2 col-sm-6" data-aos="fade-left">
-                                <h4 class="mb-4">Capture every moments and share it to all your friends</h4>
-                                <p>Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius
-                                    blandit sit amet non magna. Cras mattis consectetur purus sit amet.</p>
-                                <div class="progress mb-3">
-                                    <div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95"
-                                         aria-valuemin="0" aria-valuemax="100">HTML5 95%
-                                    </div>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90"
-                                         aria-valuemin="0" aria-valuemax="100">CSS3 90%
-                                    </div>
-                                </div>
-                            </div><!--/ .col-md-4.col-md-offset-2.col-sm-6 -->
+                            <div class="col-md-4 offset-md-right-2 col-sm-6 bg-dark" data-aos="fade-left">
+                                <h2 class="mb-4" style="color: white; font-weight: bold;">تیم و اعضای کادر فنی</h2>
+                                <h3 style="color: white">برای دیدن بیوگرافی تمامی بازیکنان و کادر فنی فعلی کلیک
+                                    کنید</h3>
+                                <buttoon class="learn-more">
+                                      <span class="circle" aria-hidden="true">
+                                      <span class="icon arrow"></span>
+                                      </span>
+                                    <span class="buttoon-text" style="font-weight: bold; font-size: large">مشاهده</span>
+                                </buttoon>
 
-                        </div><!--/ .featurettes-item -->
+                            </div>
+                        </div><!--/ .col-md-4.col-md-offset-2.col-sm-6 -->
 
-                    </div><!--/ .col-md-12 -->
+                    </div><!--/ .featurettes-item -->
 
-                </div><!--/ .row -->
-            </div>
+                </div><!--/ .col-md-12 -->
+
+            </div><!--/ .row -->
+        </div>
         </div><!--/ .container -->
 
     </section>    <!-- Testimonial Section-->
-    <section id="testimonial" class="section-padding bg-fixed bg-white overlay"
+    <section id="testimonial" class="section-padding bg-fixed bg-dark overlay"
              style="background-image: url({% static 'img/bg-white.jpg' %});">
         <div class="container">
             <div class="section-content" data-aos="fade-up">
@@ -206,7 +308,7 @@
         </div>
     </section>
     <!-- End of Testimonial Section-->    <!-- Portfolio Section -->
-    <section id="portfolio" class="bg-white">
+    <section id="portfolio" class="bg-dark">
         <div class="container">
             <div class="section-content">
                 <!-- Section Title -->
@@ -234,10 +336,12 @@
                             <!-- Portfolio Item -->
                             <div class="grid-item minimalism" data-aos="fade-up">
                                 <div class="grid-item-wrapper">
-                                    <img src="{% static 'img/photo-1.jpg' %}" alt="portfolio-img" class="portfolio-item">
+                                    <img src="{% static 'img/photo-1.jpg' %}" alt="portfolio-img"
+                                         class="portfolio-item">
                                     <div class="grid-info">
                                         <div class="grid-link d-flex justify-content-center">
-                                            <a class="img-pop" data-rel="lightcase" href="{% static 'img/photo-1.jpg' %}"
+                                            <a class="img-pop" data-rel="lightcase"
+                                               href="{% static 'img/photo-1.jpg' %}"
                                                title="Photo-1">
                                                 <span class="lnr lnr-move"></span>
                                             </a>
@@ -256,10 +360,12 @@
                             <!-- Portfolio Item -->
                             <div class="grid-item vintage" data-aos="fade-up">
                                 <div class="grid-item-wrapper">
-                                    <img src="{% static 'img/photo-6.jpg' %}" alt="portfolio-img" class="portfolio-item">
+                                    <img src="{% static 'img/photo-6.jpg' %}" alt="portfolio-img"
+                                         class="portfolio-item">
                                     <div class="grid-info">
                                         <div class="grid-link d-flex justify-content-center">
-                                            <a class="img-pop" data-rel="lightcase" href="{% static 'img/photo-6.jpg' %}" title="Ship">
+                                            <a class="img-pop" data-rel="lightcase"
+                                               href="{% static 'img/photo-6.jpg' %}" title="Ship">
                                                 <span class="lnr lnr-move"></span>
                                             </a>
                                             <a class="ext-link" href="https://unsplash.com/" target="_blank">
@@ -277,10 +383,12 @@
                             <!-- Portfolio Item -->
                             <div class="grid-item creative grid-item-height" data-aos="fade-up">
                                 <div class="grid-item-wrapper">
-                                    <img src="{% static 'img/photo-6.jpg' %}" alt="portfolio-img" class="portfolio-item">
+                                    <img src="{% static 'img/photo-6.jpg' %}" alt="portfolio-img"
+                                         class="portfolio-item">
                                     <div class="grid-info">
                                         <div class="grid-link d-flex justify-content-center">
-                                            <a class="img-pop" data-rel="lightcase" href="{% static 'img/photo-6.jpg' %}"
+                                            <a class="img-pop" data-rel="lightcase"
+                                               href="{% static 'img/photo-6.jpg' %}"
                                                title="Tracy Portrait">
                                                 <span class="lnr lnr-move"></span>
                                             </a>
@@ -299,10 +407,12 @@
                             <!-- Portfolio Item -->
                             <div class="grid-item creative" data-aos="fade-up">
                                 <div class="grid-item-wrapper">
-                                    <img src="{% static 'img/photo-6.jpg' %}" alt="portfolio-img" class="portfolio-item">
+                                    <img src="{% static 'img/photo-6.jpg' %}" alt="portfolio-img"
+                                         class="portfolio-item">
                                     <div class="grid-info">
                                         <div class="grid-link d-flex justify-content-center">
-                                            <a class="img-pop" data-rel="lightcase" href="{% static 'img/photo-6.jpg' %}"
+                                            <a class="img-pop" data-rel="lightcase"
+                                               href="{% static 'img/photo-6.jpg' %}"
                                                title="Guitar">
                                                 <span class="lnr lnr-move"></span>
                                             </a>
@@ -321,10 +431,12 @@
                             <!-- Portfolio Item -->
                             <div class="grid-item vintage" data-aos="fade-up">
                                 <div class="grid-item-wrapper">
-                                    <img src="{% static 'img/photo-6.jpg' %}" alt="portfolio-img" class="portfolio-item">
+                                    <img src="{% static 'img/photo-6.jpg' %}" alt="portfolio-img"
+                                         class="portfolio-item">
                                     <div class="grid-info">
                                         <div class="grid-link d-flex justify-content-center">
-                                            <a class="img-pop" data-rel="lightcase" href="{% static 'img/photo-6.jpg' %}"
+                                            <a class="img-pop" data-rel="lightcase"
+                                               href="{% static 'img/photo-6.jpg' %}"
                                                title="Bookself">
                                                 <span class="lnr lnr-move"></span>
                                             </a>
@@ -343,10 +455,12 @@
                             <!-- Portfolio Item -->
                             <div class="grid-item creative" data-aos="fade-up">
                                 <div class="grid-item-wrapper">
-                                    <img src="{% static 'img/photo-6.jpg' %}" alt="portfolio-img" class="portfolio-item">
+                                    <img src="{% static 'img/photo-6.jpg' %}" alt="portfolio-img"
+                                         class="portfolio-item">
                                     <div class="grid-info">
                                         <div class="grid-link d-flex justify-content-center">
-                                            <a class="img-pop" data-rel="lightcase" href="{% static 'img/photo-6.jpg' %}"
+                                            <a class="img-pop" data-rel="lightcase"
+                                               href="{% static 'img/photo-6.jpg' %}"
                                                title="Guitar">
                                                 <span class="lnr lnr-move"></span>
                                             </a>
@@ -410,11 +524,11 @@
             </div>
     </section>
     <!-- End of Client Section -->    <!-- Reservation Section -->
-    <section id="reservation" class="bg-white section-content">
+    <section id="reservation" class="bg-dark section-content">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 offset-lg-1 mb-5 mb-lg-0" data-aos="fade-right">
-                    <div class="bg-white p-5 shadow">
+                    <div class="bg-dark p-5 shadow">
                         <div class="heading-section text-center">
                             <h2 class="mb-4">
                                 Contact Us
