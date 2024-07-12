@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'accounts',
     'page_team',
 
-    # 'crispy_forms',
-    # 'crispy_bootstrap5',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -130,16 +130,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-# LOGIN_REDIRECT_URL = 'book_list'
-# LOGOUT_REDIRECT_URL = 'book_list'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 #
-# CRISPY_TEMPLATE_PACK = 'bootstrap5'
-# CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
-# #
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+#
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 #
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
 #
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
+MEDIA_URL = '/media/'
+MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
