@@ -1,0 +1,65 @@
+[33mcommit 068ca6290365ead227a4f4b0d94a362e914948b6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Roein-yousefi <roeinyousefi@gmail.com>
+Date:   Fri Jul 12 03:56:03 2024 -0700
+
+    create login , signup , reset pass
+
+[33mcommit 4d0a474131bd71fda3c5b076cfcedd0c11e413f2[m
+Author: Roein-yousefi <roeinyousefi@gmail.com>
+Date:   Fri Jul 12 02:33:53 2024 -0700
+
+    upadte frontend footer
+
+[33mcommit 8a20abe731116f9f5000cee2355fddff07e4ab90[m
+Author: Roein-yousefi <roeinyousefi@gmail.com>
+Date:   Wed Jul 10 16:16:14 2024 -0700
+
+    upadte home page frontend
+
+[33mcommit 13484a78ed9fd83d3c6d061a9821d42f6db4f25d[m
+Author: Roein-yousefi <roeinyousefi@gmail.com>
+Date:   Mon Jul 8 05:00:25 2024 -0700
+
+    add back grownd for header
+
+[33mcommit df8b03a78ac0c754cab8c7979bed63c64b5a88d4[m
+Author: Roein-yousefi <roeinyousefi@gmail.com>
+Date:   Sun Jul 7 08:16:59 2024 -0700
+
+    edited header
+
+[33mcommit 0bc7a8bdee09f2a60c28193571ec4c70e4194852[m
+Author: Roein-yousefi <roeinyousefi@gmail.com>
+Date:   Sun Jul 7 06:09:05 2024 -0700
+
+    create home page view and update page_team
+
+[33mcommit f1df02d00a2b4ffb463b7630c589df09b8320247[m
+Author: Roein-yousefi <roeinyousefi@gmail.com>
+Date:   Sun Jul 7 05:41:02 2024 -0700
+
+    add page_team for settings
+
+[33mcommit 0b461448706731028e106f7e9e1a051f34c5e0f7[m
+Author: Roein-yousefi <roeinyousefi@gmail.com>
+Date:   Sun Jul 7 05:39:31 2024 -0700
+
+    create _base.html
+
+[33mcommit a2e983d7511f4c39978469c2a248399d9ba172fd[m
+Author: Roein-yousefi <roeinyousefi@gmail.com>
+Date:   Sun Jul 7 05:27:39 2024 -0700
+
+    create app page_team
+
+[33mcommit b4a131df0d89f3dac564a2a30e29dad2d5609ff4[m
+Author: Roein-yousefi <roeinyousefi@gmail.com>
+Date:   Sun Jul 7 05:25:50 2024 -0700
+
+    create app accounts
+
+[33mcommit 25292a8dceebf3e54f948ecab8fe0fc6dcf6f527[m
+Author: Roein-yousefi <roeinyousefi@gmail.com>
+Date:   Sat Jul 6 04:39:40 2024 -0700
+
+    start project

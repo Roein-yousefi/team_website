@@ -3,7 +3,7 @@ from .models import TeamNews
 
 
 class TeamNewsAdmin(admin.ModelAdmin):
-    list_display = ('title')
+    list_display = ('title' , 'datetime_created')
 
 
-admin.site.register(TeamNews)
+admin.site.register(TeamNews , TeamNewsAdmin)
