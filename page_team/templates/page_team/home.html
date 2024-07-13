@@ -3,8 +3,14 @@
 {% block content %}
     <head>
         <link rel="stylesheet" href="{% static 'css/mycss.css' %}">
+        <style>
+            .bg-black {
+                background-color: rgb(60, 0, 42);
+                color: white; /* برای اطمینان از خوانایی متن */
+            }
+        </style>
     </head>
-    <section id="features" class="bg-dark">
+    <section id="features" class="bg-black">
         <div class="container">
             <div class="section-content">
                 <!-- Section Title -->
@@ -173,57 +179,65 @@
     </section>
     <!-- End of Features Section-->
     <section id="section-featurettes" class="featurettes overlay bg-fixed" style="background-image: url(img/bg.jpg);">
-    <div class="jumbotron d-flex align-items-center" style="background: url('{% static "img/5910920.jpg" %}') no-repeat center center; background-size: cover; min-height: 300px;">
+        <div class="jumbotron d-flex align-items-center"
+             style="background: url('{% static "img/5910920.jpg" %}') no-repeat center center; background-size: cover; min-height: 300px;">
 
-    <div class="container">
-        <div class="section-content">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row align-items-center text-white">
-                        <div class="col-md-4 offset-md-2 col-sm-6" data-aos="fade-right">
-                            <h2 class="mb-4" style="font-weight: bold;">فروشگاه پرسپولیس</h2>
-                            <h3 style="font-weight: bold;">به فروشگاهمون یه سر بزن خوشت میاد</h3>
-                            <button type="button" class="btn btn-outline-primary">FEATURES</button>
-                        </div><!--/ .col-md-4.col-md-offset-2.col-sm-6 -->
-                        <div class="parent" style="width: 300px; padding: 20px; perspective: 1000px;">
-                            <div class="ccard" style="padding-top: 0px; border: 3px solid rgb(255, 255, 255); transform-style: preserve-3d; background: linear-gradient(135deg,#0000 18.75%,#f3f3f3 0 31.25%,#0000 0), repeating-linear-gradient(45deg,#f3f3f3 -6.25% 6.25%,#ffffff 0 18.75%); background-size: 60px 60px; background-position: 0 0, 0 0; background-color: #f0f0f0; width: 100%; box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px; transition: all 0.9s ease-in-out; position: relative; overflow: hidden; height: auto;">
-                                <div class="content-box" style="position: relative; z-index: 1; background: rgba(4, 193, 250, 0.732); padding: 60px 25px 25px 25px; transform-style: preserve-3d;">
-                                    <img src="{% static 'img/photo1720646887.png' %}" class="card-img-top" alt="..." style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
-                                    <span class="ccard-title" style="display: inline-block; color: white; font-size: 25px; font-weight: 900; transition: all 0.5s ease-in-out; transform: translate3d(0px, 0px, 50px);"></span>
-                                    <p class="ccard-content" style="margin-top: 10px; font-size: 12px; font-weight: 700; color: #f2f2f2; transition: all 0.5s ease-in-out; transform: translate3d(0px, 0px, 30px);">
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                    </p>
-                                    <br>
-                                    <br>
-                                </div>
-                            </div>
-                        </div><!--/ .col-md-4.col-md-offset-right-2.col-sm-6 -->
-                    </div><!--/ .featurettes-item -->
-                </div><!--/ .col-md-12 -->
-            </div><!--/ .row -->
+            <div class="container">
+                <div class="section-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row align-items-center text-white">
+                                <div class="col-md-4 offset-md-2 col-sm-6" data-aos="fade-right">
+                                    <h2 class="mb-4" style="font-weight: bold;">فروشگاه پرسپولیس</h2>
+                                    <h3 style="font-weight: bold;">به فروشگاهمون یه سر بزن خوشت میاد</h3>
+                                    <a href="{% url 'shop' %}"><button type="button" class="btn btn-outline-primary" >بازدید از فروشگاه</button></a>
+
+                                </div><!--/ .col-md-4.col-md-offset-2.col-sm-6 -->
+                                <div class="parent" style="width: 300px; padding: 20px; perspective: 1000px;">
+                                    <div class="ccard"
+                                         style="padding-top: 0px; border: 3px solid rgb(255, 255, 255); transform-style: preserve-3d; background: linear-gradient(135deg,#0000 18.75%,#f3f3f3 0 31.25%,#0000 0), repeating-linear-gradient(45deg,#f3f3f3 -6.25% 6.25%,#ffffff 0 18.75%); background-size: 60px 60px; background-position: 0 0, 0 0; background-color: #f0f0f0; width: 100%; box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px; transition: all 0.9s ease-in-out; position: relative; overflow: hidden; height: auto;">
+                                        <div class="content-box"
+                                             style="position: relative; z-index: 1; background: rgba(4, 193, 250, 0.732); padding: 60px 25px 25px 25px; transform-style: preserve-3d;">
+                                            <img src="{% static 'img/photo1720646887.png' %}" class="card-img-top"
+                                                 alt="..."
+                                                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+                                            <span class="ccard-title"
+                                                  style="display: inline-block; color: white; font-size: 25px; font-weight: 900; transition: all 0.5s ease-in-out; transform: translate3d(0px, 0px, 50px);"></span>
+                                            <p class="ccard-content"
+                                               style="margin-top: 10px; font-size: 12px; font-weight: 700; color: #f2f2f2; transition: all 0.5s ease-in-out; transform: translate3d(0px, 0px, 30px);">
+                                                <br>
+                                                <br>
+                                                <br>
+                                                <br>
+                                                <br>
+                                                <br>
+                                                <br>
+                                            </p>
+                                            <br>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div><!--/ .col-md-4.col-md-offset-right-2.col-sm-6 -->
+                            </div><!--/ .featurettes-item -->
+                        </div><!--/ .col-md-12 -->
+                    </div><!--/ .row -->
+                </div>
+            </div><!--/ .container -->
         </div>
-    </div><!--/ .container -->
-</div>
     </section>
-    <section id="section-featurettes" class="featurettes bg-dark">
+    <section id="section-featurettes" class="featurettes bg-black">
 
-        <div class="container bg-dark">
+        <div class="container bg-black">
             <div class="section-content">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row align-items-center ">
 
-                            <div class="col-md-4 offset-md-2 col-sm-6 ذ" data-aos="flip-left">
+                            <div class="col-md-4 offset-md-2 col-sm-6 " data-aos="flip-left">
                                 <img class="my-5 border" src="{% static 'img/299565.jpg' %}" alt="">
                             </div><!--/ .col-md-4.col-md-offset-right-2.col-sm-6 -->
 
-                            <div class="col-md-4 offset-md-right-2 col-sm-6 bg-dark" data-aos="fade-left">
+                            <div class="col-md-4 offset-md-right-2 col-sm-6 bg-black" data-aos="fade-left">
                                 <h2 class="mb-4" style="color: white; font-weight: bold;">تیم و اعضای کادر فنی</h2>
                                 <h3 style="color: white">برای دیدن بیوگرافی تمامی بازیکنان و کادر فنی فعلی کلیک
                                     کنید</h3>
@@ -308,7 +322,7 @@
         </div>
     </section>
     <!-- End of Testimonial Section-->    <!-- Portfolio Section -->
-    <section id="portfolio" class="bg-dark">
+    <section id="portfolio" class="bg-black">
         <div class="container">
             <div class="section-content">
                 <!-- Section Title -->
@@ -509,7 +523,7 @@
                                 <img class="img-responsive" src="{% static 'img/cs.png' %}" alt=" ">
                                 <h3>1</h3>
                             </div>
-                            
+
                         </div>
                         <!-- End of Client Holder -->
                     </div>
@@ -517,4 +531,4 @@
             </div>
     </section>
     <!-- End of Client Section -->    <!-- Reservation Section -->
-    {% endblock content %}
+{% endblock content %}
