@@ -27,147 +27,33 @@
                         <div class="row">
                             <!-- Features Item -->
                             <div class="col-md-4 col-sm-12 text-center mt-4">
-                                <div class="shadow rounded feature-item mb-4" data-aos="fade-up">
 
-                                    <div class="card-container">
-                                        <div class="card border-black">
-                                            <div class="img-content">
-                                                <img src="{% static 'img/photo_2024-06-25_10-43-2735.jpg' %}"
-                                                     class="card-img-top"
-                                                     alt="...">
+                                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                                    {% for news in model1 %}
+                                        <div>
+                                            <div class="shadow rounded feature-item" data-aos="fade-up">
+                                                <div class="card-container">
+                                                    <div class="card border-black">
+                                                        <div class="img-content">
+                                                            <img src="{{ news.image.url }}"
+                                                                 class="card-img-top"
+                                                                 alt="...">
+                                                        </div>
+                                                        <div class="content">
+                                                            <p class="heading">{{ news.title}}</p>
+                                                            <p>
+                                                                {{ news.description|truncatewords:20}}
+                                                            </p>
+                                                        </div>
+                                                        <button id="bottone1"><strong>اخبار پرسپولیس</strong></button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="content">
-                                                <p class="heading">Card Hover</p>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipii
-                                                    voluptas ten mollitia pariatur odit, ab
-                                                    minus ratione adipisci accusamus vel est excepturi laboriosam magnam
-                                                    necessitatibus dignissimos molestias.
-                                                </p>
-
-                                            </div>
-
-                                            <button id="bottone1"><strong>اخبار پرسپولیس</strong></button>
                                         </div>
-                                    </div>
+                                    {% endfor %}
                                 </div>
-                                <div class="shadow rounded feature-item mb-4" data-aos="fade-up">
 
-                                    <div class="card-container">
-                                        <div class="card">
-                                            <div class="img-content">
-                                                <img src="{% static 'img/1ebd09071cd341948e5d5d8afef001d9.jpg' %}"
-                                                     class="card-img-top" alt="...">
-                                            </div>
-                                            <div class="content">
-                                                <p class="heading">Card Hover</p>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipii
-                                                    voluptas ten mollitia pariatur odit, ab
-                                                    minus ratione adipisci accusamus vel est excepturi laboriosam magnam
-                                                    necessitatibus dignissimos molestias.
-                                                </p>
-                                            </div>
-                                            <button id="bottone1"><strong>اخبار پرسپولیس</strong></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End of Feature Item -->
-                            <!-- Features Item -->
-                            <div class="col-md-4 col-sm-12 text-center">
-                                <div class="shadow rounded feature-item mb-4" data-aos="fade-up">
 
-                                    <div class="card-container">
-                                        <div class="card">
-                                            <div class="img-content">
-                                                <img src="{% static 'img/perspolislogo7276.png' %}" class="card-img-top"
-                                                     alt="...">
-                                            </div>
-                                            <div class="content">
-                                                <p class="heading">Card Hover</p>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipii
-                                                    voluptas ten mollitia pariatur odit, ab
-                                                    minus ratione adipisci accusamus vel est excepturi laboriosam magnam
-                                                    necessitatibus dignissimos molestias.
-                                                </p>
-                                            </div>
-                                            <button id="bottone1"><strong>اخبار پرسپولیس</strong></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="shadow rounded feature-item mb-4" data-aos="fade-up">
-
-                                    <div class="card-container">
-                                        <div class="card">
-                                            <div class="img-content">
-                                                <img src="{% static 'img/photo_2_2024-03-30_17-01-02.png' %}"
-                                                     class="card-img-top"
-                                                     alt="...">
-                                            </div>
-                                            <div class="content">
-                                                <p class="heading">Card Hover</p>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipii
-                                                    voluptas ten mollitia pariatur odit, ab
-                                                    minus ratione adipisci accusamus vel est excepturi laboriosam magnam
-                                                    necessitatibus dignissimos molestias.
-                                                </p>
-                                            </div>
-                                            <button id="bottone1"><strong>اخبار پرسپولیس</strong></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End of Feature Item -->
-                            <!-- Features Item -->
-                            <div class="col-md-4 col-sm-12 text-center mt-4">
-                                <div class="shadow rounded feature-item mb-4" data-aos="fade-up">
-
-                                    <div class="card-container">
-                                        <div class="card">
-                                            <div class="img-content">
-                                                <img src="{% static 'img/photo_4_2024-03-30_17-01-02.png' %}"
-                                                     class="card-img-top"
-                                                     alt="...">
-                                            </div>
-                                            <div class="content">
-                                                <p class="heading">Card Hover</p>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipii
-                                                    voluptas ten mollitia pariatur odit, ab
-                                                    minus ratione adipisci accusamus vel est excepturi laboriosam magnam
-                                                    necessitatibus dignissimos molestias.
-                                                </p>
-                                            </div>
-                                            <button id="bottone1"><strong>اخبار پرسپولیس</strong></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="shadow rounded feature-item mb-4" data-aos="fade-up">
-
-                                    <div class="card-container">
-                                        <div class="card">
-                                            <div class="img-content">
-                                                <img src="{% static 'img/photo_2024-07-07_12-50-14.png' %}"
-                                                     class="card-img-top"
-                                                     alt="...">
-
-                                            </div>
-                                            <div class="content">
-                                                <p class="heading">Card Hover</p>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipii
-                                                    voluptas ten mollitia pariatur odit, ab
-                                                    minus ratione adipisci accusamus vel est excepturi laboriosam magnam
-                                                    necessitatibus dignissimos molestias.
-                                                </p>
-                                            </div>
-                                            <button id="bottone1"><strong>اخبار پرسپولیس</strong></button>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <!-- End of Feature Item -->
                         </div>
@@ -190,7 +76,9 @@
                                 <div class="col-md-4 offset-md-2 col-sm-6" data-aos="fade-right">
                                     <h2 class="mb-4" style="font-weight: bold;">فروشگاه پرسپولیس</h2>
                                     <h3 style="font-weight: bold;">به فروشگاهمون یه سر بزن خوشت میاد</h3>
-                                    <a href="{% url 'shop' %}"><button type="button" class="btn btn-outline-primary" >بازدید از فروشگاه</button></a>
+                                    <a href="{% url 'shop' %}">
+                                        <button type="button" class="btn btn-outline-primary">بازدید از فروشگاه</button>
+                                    </a>
 
                                 </div><!--/ .col-md-4.col-md-offset-2.col-sm-6 -->
                                 <div class="parent" style="width: 300px; padding: 20px; perspective: 1000px;">
