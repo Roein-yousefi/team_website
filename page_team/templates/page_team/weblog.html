@@ -4,7 +4,7 @@
 {% block content %}
     <head>
         <link rel="stylesheet" href="{% static 'css/mycss.css' %}">
-        <link rel="stylesheet" href="{% static 'css/shop.css' %}">
+        <link rel="stylesheet" href="{% static 'css/weblog.css' %}">
 
         <style>
             .bg-black {
@@ -23,23 +23,25 @@
                         بهترین و با کیفیت ترین هارو پیدا میکنید</p>
                 </div>
 
-                {% for product in products %}
+                {% for new in news %}
                     {% if forloop.counter0|divisibleby:3 %}
                         <div class="row" style="display: flex; justify-content: space-between; margin-bottom: 20px;">
                     {% endif %}
+
                 <!-- Blog Item -->
-                <div class="card" style="width: 25%; margin-bottom: 15px;">
-                    <div class="image" style="width: 100%; height: 200px; overflow: hidden;">
-                        <img src="{{ product.image.url }}" alt=""
-                             style="width: 150%; height: 150%; object-fit: cover;">
-                    </div>
-                    <div class="productTitle">
-                        {{ product.title}}
-                    </div>
-                    <div class="cost">
-                        {{product.price}}
-                    </div>
-                    <button class="addtocart">بازدید</button>
+                <div class="card">
+                    <div class="card-image"> <img src="{{ new.image.url }}" alt=""
+                             style="width: 150%; height: 150%; object-fit: cover;"></div>
+                    <p class="card-title">{{ new.title}}</p>
+                    <p class="card-body">
+                        {{ new.description|truncatewords:20 }}
+                    </p>
+                    <buttoon class="learn-more">
+                                      <span class="circle" aria-hidden="true">
+                                      <span class="icon arrow"></span>
+                                      </span>
+                                    <span class="buttoon-text" style="font-weight: bold; font-size: large">مشاهده</span>
+                                </buttoon>
                 </div>
                 {% if forloop.counter|divisibleby:3 or forloop.last %}
                     </div>
@@ -61,4 +63,3 @@
         </div>
     </section>
 {% endblock content %}
-

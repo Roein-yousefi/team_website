@@ -13,3 +13,9 @@ class ShopPageView(generic.ListView):
     model = TeamShop
     template_name = 'page_team/shop.html'
     context_object_name = 'products'
+
+class WeblogPageView(generic.ListView):
+    model = TeamNews
+    template_name = 'page_team/weblog.html'
+    context_object_name = 'news'
+
