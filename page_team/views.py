@@ -19,6 +19,7 @@ class HomePageView(generic.TemplateView):
 class ShopPageView(generic.ListView):
     model = TeamShop
     template_name = 'page_team/shop.html'
+    paginate_by = 6
     context_object_name = 'products'
 
 class WeblogPageView(generic.ListView):
