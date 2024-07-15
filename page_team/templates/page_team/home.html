@@ -33,19 +33,25 @@
                                         <div>
                                             <div class="shadow rounded feature-item" data-aos="fade-up">
                                                 <div class="card-container">
-                                                    <div class="card border-black">
-                                                        <div class="img-content">
+                                                    <div class="card border-black"
+                                                         style="display: flex; flex-direction: column; height: 100%;">
+                                                        <div class="img-content"
+                                                             style="flex: 1 0 auto; overflow: hidden;">
                                                             <img src="{{ news.image.url }}"
                                                                  class="card-img-top"
-                                                                 alt="...">
+                                                                 alt="..."
+                                                                 style="width: 100%; height: 100%; object-fit: cover;">
                                                         </div>
-                                                        <div class="content">
-                                                            <p class="heading">{{ news.title}}</p>
-                                                            <p>
-                                                                {{ news.description|truncatewords:10}}
-                                                            </p>
+                                                        <div class="content" style="padding: 16px; flex: 0 0 auto;">
+                                                            <p class="heading">{{ news.title }}</p>
+                                                            <p>{{ news.description|truncatewords:10 }}</p>
                                                         </div>
-                                                        <button id="bottone1"><strong>اخبار پرسپولیس</strong></button>
+                                                        <a href="{% url 'news' %}" style="flex: 0 0 auto;">
+                                                            <button id="bottone1"
+                                                                    style="width: 100%; padding: 16px; font-weight: bold; border: none; background-color: #007bff; color: white;">
+                                                                <strong>اخبار پرسپولیس</strong>
+                                                            </button>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>

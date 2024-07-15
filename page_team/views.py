@@ -24,6 +24,7 @@ class ShopPageView(generic.ListView):
 
 class WeblogPageView(generic.ListView):
     model = TeamNews
+    paginate_by = 6
     template_name = 'page_team/weblog.html'
     context_object_name = 'news'
 
