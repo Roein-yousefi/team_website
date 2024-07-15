@@ -1,70 +1,96 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
 <!DOCTYPE html>
-{% load  static %}
+{% load static %}
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مشخصات محصول</title>
-    <link rel="stylesheet" href=" {% static 'post_detail.css' %}">
+    <link rel="stylesheet" href="{% static 'css/post_detail.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .comments-section, .comment-form-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        .comment {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .comment-author {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .recommend {
+            color: green;
+        }
+        .not-recommend {
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <main class="product-detail">
             <div class="product-images">
-                <img id="main-image" src="product-main.jpg" alt="تصویر اصلی محصول">
+                <img id="main-image" src="{{ shop.image.url }}" alt="تصویر اصلی محصول">
                 <div class="thumbnail-container">
-                    <img class="thumbnail" src="product-thumb1.jpg" alt="تصویر کوچک 1">
-                    <img class="thumbnail" src="product-thumb2.jpg" alt="تصویر کوچک 2">
-                    <img class="thumbnail" src="product-thumb3.jpg" alt="تصویر کوچک 3">
+                    <img class="thumbnail" src="{{ shop.image.url }}" alt="تصویر کوچک 1">
+                    <img class="thumbnail" src="{{ shop.image.url }}" alt="تصویر کوچک 2">
+                    <img class="thumbnail" src="{{ shop.image.url }}" alt="تصویر کوچک 3">
                 </div>
             </div>
 
             <div class="product-info">
-                <h2 id="product-name">نام محصول</h2>
-                <p id="product-price">قیمت: <span>1,000,000</span> تومان</p>
-                <p id="product-availability">موجودی: <span>در انبار</span></p>
-                <div class="quantity-selector">
-                    <button id="decrease-quantity">-</button>
-                    <input type="number" id="product-quantity" value="1" min="1">
-                    <button id="increase-quantity">+</button>
-                </div>
-                <button id="add-to-cart">افزودن به سبد خرید</button>
+                <h2 id="product-name">{{ shop.title }}</h2>
+                <p id="product-price">قیمت: <span>{{ shop.price }}</span> تومان</p>
             </div>
 
             <div class="product-description">
                 <h3>توضیحات محصول</h3>
-                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+                <p>{{ shop.description }}</p>
             </div>
 
-            <div class="product-features">
-                <h3>ویژگی‌های محصول</h3>
-                <ul>
-                    <li>ویژگی 1</li>
-                    <li>ویژگی 2</li>
-                    <li>ویژگی 3</li>
-                    <li>ویژگی 4</li>
-                </ul>
+            <div class="comments-section" style="margin-bottom: 30px;">
+                <h2 style="margin-bottom: 20px;">نظرات:</h2>
+                {% for comment in comments %}
+                    {% if comment.active %}
+                        <div class="comment">
+                            <h5 class="comment-author">{{ comment.user.username }}</h5>
+                            <p>{{ comment.text|linebreaks }}</p>
+                            <div>
+                                {% if comment.recommend %}
+                                    <p class="recommend">این محصول را پیشنهاد می‌کنم</p>
+                                {% else %}
+                                    <p class="not-recommend">این محصول را پیشنهاد نمی‌کنم</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
             </div>
 
-            <div class="product-reviews">
-                <h3>نظرات کاربران</h3>
-                <div class="review">
-                    <h4>کاربر 1</h4>
-                    <p>عالی بود خیلی راضی هستم.</p>
-                </div>
-                <div class="review">
-                    <h4>کاربر 2</h4>
-                    <p>کیفیت خوبی داره، ولی قیمتش کمی بالاست.</p>
-                </div>
+            <div class="comment-form-section" style="width: 100%; max-width: 800px; margin: 30px auto; padding: 30px;">
+                <h3 style="margin-bottom: 20px;">نظر خود را وارد کنید:</h3>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ comment_form|crispy }}
+                    <button type="submit" class="btn btn-primary" style="margin-top: 10px;">ارسال</button>
+                </form>
             </div>
         </main>
-
-        <footer>
-            <p>&copy; 2024 فروشگاه آنلاین. تمامی حقوق محفوظ است.</p>
-        </footer>
     </div>
 
-    <script src="{% static 'post_detail.js' %}"></script>
+    <script src="{% static 'js/post_detail.js' %}"></script>
 </body>
 </html>
+{% endblock content %}
+

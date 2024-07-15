@@ -41,7 +41,8 @@
                     <div class="cost">
                         {{ product.price }}
                     </div>
-                    <button class="addtocart">بازدید</button>
+                    <a href="{{ product.get_absolute_url }}"><button class="addtocart">بازدید</button></a>
+
                 </div>
                 {% if forloop.counter|divisibleby:3 or forloop.last %}
                     </div>
