@@ -1,0 +1,199 @@
+@font-face {
+    font-family: 'Vazir';
+    src: url('Vazir.woff2') format('woff2');
+}
+
+body {
+    font-family: 'Vazir', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.product-detail {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-images {
+    flex: 1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#main-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+#main-image:hover {
+    transform: scale(1.05);
+}
+
+.thumbnail-container {
+    margin-top: 10px;
+}
+
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+.product-info {
+    flex: 1;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+#product-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#product-price {
+    font-size: 18px;
+    color: #e74c3c;
+}
+
+#product-availability {
+    font-size: 16px;
+    color: #27ae60;
+    margin-bottom: 10px;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.quantity-selector button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-selector button:hover {
+    background-color: #2980b9;
+}
+
+#product-quantity {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 10px;
+    padding: 10px;
+}
+
+#add-to-cart {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#add-to-cart:hover {
+    background-color: #c0392b;
+}
+
+.product-description, .product-features, .product-reviews {
+    margin-bottom: 20px;
+}
+
+.review {
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+}
+
+/* انیمیشن‌ها */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
