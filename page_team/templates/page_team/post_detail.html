@@ -15,7 +15,7 @@
         .comments-section, .comment-form-section {
             margin-top: 30px;
             padding: 20px;
-            background-color: #f9f9f9;
+            background-color: rgba(44, 19, 19, 0.91);
             border-radius: 8px;
         }
         .comment {
@@ -35,6 +35,56 @@
         .not-recommend {
             color: red;
         }
+        .product-info {
+            text-align: right;
+            padding-right: 20px;
+        }
+        #product-name {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        #product-price {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        .size-selector {
+            margin-bottom: 20px;
+        }
+        .size-selector select {
+            padding: 10px;
+            font-size: 1.2em;
+            width: 200px;
+        }
+        .add-to-cart {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .add-to-cart:hover {
+            background-color: #45a049;
+        }
+        .product-description {
+            margin-top: 20px;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .product-description h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .comments-section {
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
@@ -52,45 +102,66 @@
             <div class="product-info">
                 <h2 id="product-name">{{ shop.title }}</h2>
                 <p id="product-price">قیمت: <span>{{ shop.price }}</span> تومان</p>
-            </div>
+                <div class="size-selector">
+                    <select id="size-select">
+                        <option value="">انتخاب سایز</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                </div>
+                <button class="add-to-cart" onclick="addToCart()">افزودن به سبد خرید</button>
 
-            <div class="product-description">
-                <h3>توضیحات محصول</h3>
-                <p>{{ shop.description }}</p>
-            </div>
-
-            <div class="comments-section" style="margin-bottom: 30px;">
-                <h2 style="margin-bottom: 20px;">نظرات:</h2>
-                {% for comment in comments %}
-                    {% if comment.active %}
-                        <div class="comment">
-                            <h5 class="comment-author">{{ comment.user.username }}</h5>
-                            <p>{{ comment.text|linebreaks }}</p>
-                            <div>
-                                {% if comment.recommend %}
-                                    <p class="recommend">این محصول را پیشنهاد می‌کنم</p>
-                                {% else %}
-                                    <p class="not-recommend">این محصول را پیشنهاد نمی‌کنم</p>
-                                {% endif %}
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-
-            <div class="comment-form-section" style="width: 100%; max-width: 800px; margin: 30px auto; padding: 30px;">
-                <h3 style="margin-bottom: 20px;">نظر خود را وارد کنید:</h3>
-                <form method="POST">
-                    {% csrf_token %}
-                    {{ comment_form|crispy }}
-                    <button type="submit" class="btn btn-primary" style="margin-top: 10px;">ارسال</button>
-                </form>
+                <div class="product-description">
+                    <h3>توضیحات محصول</h3>
+                    <p>{{ shop.description }}</p>
+                </div>
             </div>
         </main>
+
+        <div class="comment-form-section" style="width: 100%; max-width: 800px; margin: 30px auto; padding: 30px;">
+            <h3 style="margin-bottom: 20px; color: white">نظر خود را وارد کنید:</h3>
+            <form method="POST">
+                {% csrf_token %}
+                {{ comment_form|crispy }}
+                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">ارسال</button>
+            </form>
+        </div>
+
+        <div class="comments-section" style="width: 100%; max-width: 1000px; background-color: rgba(77,76,79,0.9);" >
+            <h2 style="margin-bottom: 20px; color: white">نظرات:</h2>
+            {% for comment in comments %}
+                {% if comment.active %}
+                    <div class="comment" style="background-color: rgba(211,2,95,0.91);">
+                        <h5 class="comment-author" style="color: white">{{ comment.user.username }}</h5>
+                        <h6 style="color: white">{{ comment.text|linebreaks }}</h6>
+                        <div>
+                            {% if comment.recommend %}
+                                <p class="recommend" style="color: white">این محصول را پیشنهاد می‌کنم</p>
+                            {% else %}
+                                <p class="not-recommend" style="color: white">این محصول را پیشنهاد نمی‌کنم</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
 
     <script src="{% static 'js/post_detail.js' %}"></script>
+    <script>
+        function addToCart() {
+            var size = document.getElementById('size-select').value;
+            if (size) {
+                alert('محصول با سایز ' + size + ' به سبد خرید اضافه شد.');
+            } else {
+                alert('لطفا یک سایز انتخاب کنید.');
+            }
+        }
+    </script>
 </body>
 </html>
+
 {% endblock content %}
 
