@@ -29,6 +29,11 @@ class WeblogPageView(generic.ListView):
     template_name = 'page_team/weblog.html'
     context_object_name = 'news'
 
+class WeblogDetailView(generic.DetailView):
+    model = TeamNews
+    template_name = 'page_team/weblog_detail.html'
+    context_object_name = 'news'
+
 # class PostDetailShopView(generic.DetailView):
 #     model = TeamShop
 #     template_name = 'page_team/post_detail.html'

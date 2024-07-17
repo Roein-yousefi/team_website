@@ -1,0 +1,305 @@
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ news.title }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="{% static 'css/news.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(135deg, #ff00b7, #ff0000);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .news-header {
+            height: 100vh;
+            background: linear-gradient(135deg, #c3a7bb, #000000);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .news-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('{% static "images/pattern.svg" %}') repeat;
+            opacity: 0.1;
+            animation: patternMove 20s linear infinite;
+        }
+
+        @keyframes patternMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
+        }
+
+        .news-header h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .news-header .meta {
+            font-size: 1.2em;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+        }
+
+        .scroll-indicator::before {
+            content: '↓';
+            font-size: 2em;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        .news-content {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        #news-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            opacity: 0;
+        }
+
+        .summary, .full-content, .related-news, .share-section, .comments-section {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        h2 {
+            color: #4a4a4a;
+            border-bottom: 2px solid #6e8efb;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .share-buttons button {
+            background: #6e8efb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .share-buttons button:hover {
+            background: #5c7cfa;
+        }
+
+        #comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+        #comment-form button {
+            background: #6e8efb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        #comment-form button:hover {
+            background: #5c7cfa;
+        }
+
+        .comment {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <h1 id="news-title">{{ news.title }}</h1>
+        <div class="meta">
+            <span id="publish-date">تاریخ انتشار: {{ news.datetime_created }}</span> |
+
+        </div>
+        <div class="scroll-indicator"></div>
+    </header>
+
+    <main class="news-content">
+        {% if news.image %}
+            <img id="news-image" src="{{ news.image.url }}" alt="{{ news.title }}">
+        {% endif %}
+
+        <section class="summary">
+            <h2>خلاصه خبر</h2>
+            <p id="news-summary">{{ news.description|truncatewords:20 }}</p>
+        </section>
+
+        <section class="full-content">
+            <h2>متن کامل خبر</h2>
+            <div id="news-content">
+                {{ news.description|safe }}
+            </div>
+        </section>
+
+        {% if related_news %}
+            <section class="related-news">
+                <h2>اخبار مرتبط</h2>
+                <div id="related-news-carousel" class="carousel">
+                    {% for related in related_news %}
+                        <div class="carousel-item">
+                            <h3>{{ related.title }}</h3>
+                            <p>{{ related.summary|truncatewords:20 }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+        {% endif %}
+
+        <section class="share-section">
+            <h2>اشتراک‌گذاری</h2>
+            <div class="share-buttons">
+                <button onclick="shareNews('twitter')">توییتر</button>
+                <button onclick="shareNews('facebook')">فیسبوک</button>
+                <button onclick="shareNews('linkedin')">لینکدین</button>
+            </div>
+        </section>
+
+        <section class="comments-section">
+            <h2>نظرات</h2>
+            <form id="comment-form" method="post">
+                {% csrf_token %}
+                {{ comment_form|crispy }}
+                <button type="submit">ارسال نظر</button>
+            </form>
+            <div id="comments-list">
+                {% for comment in comments %}
+                    <div class="comment">
+                        <p>{{ comment.content }}</p>
+                        <small>{{ comment.author }} - {{ comment.created_at }}</small>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Header animations
+        gsap.to('.news-header h1', { opacity: 1, y: 0, duration: 1, delay: 0.5 });
+        gsap.to('.news-header .meta', { opacity: 1, y: 0, duration: 1, delay: 0.8 });
+        gsap.to('.scroll-indicator', { opacity: 1, duration: 1, delay: 1.2 });
+
+        // Content animations
+        gsap.to('.news-content', {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            scrollTrigger: {
+                trigger: '.news-content',
+                start: 'top 80%'
+            }
+        });
+
+        gsap.to('#news-image', {
+            opacity: 1,
+            duration: 1,
+            scrollTrigger: {
+                trigger: '#news-image',
+                start: 'top 80%'
+            }
+        });
+
+        gsap.utils.toArray('.summary, .full-content, .related-news, .share-section, .comments-section').forEach(section => {
+            gsap.to(section, {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 80%'
+                }
+            });
+        });
+
+        // Share functionality
+        function shareNews(platform) {
+            const title = document.getElementById('news-title').textContent;
+            const url = window.location.href;
+            let shareUrl;
+
+            switch(platform) {
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`;
+                    break;
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                    break;
+                case 'linkedin':
+                    shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`;
+                    break;
+            }
+
+            window.open(shareUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
+
+
+{% endblock content %}
+

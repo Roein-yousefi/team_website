@@ -39,12 +39,13 @@
                     <p class="card-body">
                         {{ new.description|truncatewords:20 }}
                     </p>
-                    <buttoon class="learn-more">
+                    <a href="{{ new.get_absolute_url }}"><buttoon class="learn-more">
                                       <span class="circle" aria-hidden="true">
                                       <span class="icon arrow"></span>
                                       </span>
                         <span class="buttoon-text" style="font-weight: bold; font-size: large">مشاهده</span>
-                    </buttoon>
+                    </buttoon></a>
+
                 </div>
                 {% if forloop.counter|divisibleby:3 or forloop.last %}
                     </div>
