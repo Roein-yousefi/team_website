@@ -4,6 +4,8 @@ from django.shortcuts import get_object_or_404 , render
 
 from .models import TeamNews , TeamGallery , TeamPlayer , TeamShop
 from .forms import ShopCommentForm
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
 class HomePageView(generic.TemplateView):
     template_name = 'page_team/home.html'
@@ -29,13 +31,13 @@ class WeblogPageView(generic.ListView):
     template_name = 'page_team/weblog.html'
     context_object_name = 'news'
 
-class WeblogDetailView(generic.DetailView):
+class WeblogDetailView(LoginRequiredMixin,generic.DetailView):
     model = TeamNews
     template_name = 'page_team/weblog_detail.html'
     context_object_name = 'news'
 
 
-
+@login_required()
 def shop_details(request , pk):
     shop = get_object_or_404(TeamShop , pk = pk)
     shop_comment = shop.comments.all()
