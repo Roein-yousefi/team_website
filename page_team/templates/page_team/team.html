@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرفی تیم پرسپولیس</title>
+    <link rel="stylesheet" href="{% static 'css/team.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>معرفی تیم پرسپولیس</h1>
+    </header>
+    <main>
+        <section>
+            <h2 class="justify-content-center">بازیکنان</h2>
+            <div class="team-container">
+                {% for player in players %}
+                    {% if forloop.counter0|divisibleby:3 %}
+                        <div class="row" style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                    {% endif %}
+                	<a href="#" alt="Player" target="_blank">
+                    <div class="card">
+                        <div class="wrapper">
+                            <img src="{{ player.image.url }}" class="cover-image" />
+                        </div>
+                        <img src="{{ player.image.url }}" class="character" />
+                        <div class="info">
+                            <h3>{{ player.name}}</h3>
+                            <p>{{ player.position}}</p>
+                        </div>
+                    </div>
+                </a>
+                {% if forloop.counter|divisibleby:3 or forloop.last %}
+                    </div>
+                {% endif %}
+                {% endfor %}
+
+                <!-- Player Card Example -->
+
+
+                <!-- Repeat the above card for each player -->
+            </div>
+        </section>
+        <section>
+            <h2>کادر فنی</h2>
+            <div class="team-container">
+                <!-- Staff Card Example -->
+                <a href="#" alt="Staff" target="_blank">
+                    <div class="card">
+                        <div class="wrapper">
+                            <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-cover.jpg" class="cover-image" />
+                        </div>
+                        <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" />
+                        <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-character.webp" class="character" />
+                        <div class="info">
+                            <h3>اسم کارمند</h3>
+                            <p>پست کاری</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" alt="Staff" target="_blank">
+                    <div class="card">
+                        <div class="wrapper">
+                            <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-cover.jpg" class="cover-image" />
+                        </div>
+                        <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" />
+                        <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-character.webp" class="character" />
+                        <div class="info">
+                            <h3>اسم کارمند</h3>
+                            <p>پست کاری</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" alt="Staff" target="_blank">
+                    <div class="card">
+                        <div class="wrapper">
+                            <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-cover.jpg" class="cover-image" />
+                        </div>
+                        <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" />
+                        <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-character.webp" class="character" />
+                        <div class="info">
+                            <h3>اسم کارمند</h3>
+                            <p>پست کاری</p>
+                        </div>
+                    </div>
+                </a>
+                <!-- Repeat the above card for each staff member -->
+            </div>
+        </section>
+    </main>
+    <script src="{% static 'js/team.js' %}"></script>
+</body>
+</html>

@@ -48,7 +48,6 @@ class TeamGallery(models.Model):
 class TeamPlayer(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to='newas/' , blank=True , null=True)
-    description = models.TextField()
     position = models.CharField(max_length=50 , blank=True , null=True)
 
     def __str__(self):

@@ -34,10 +34,7 @@ class WeblogDetailView(generic.DetailView):
     template_name = 'page_team/weblog_detail.html'
     context_object_name = 'news'
 
-# class PostDetailShopView(generic.DetailView):
-#     model = TeamShop
-#     template_name = 'page_team/post_detail.html'
-#     context_object_name = 'shop'
+
 
 def shop_details(request , pk):
     shop = get_object_or_404(TeamShop , pk = pk)
@@ -58,3 +55,9 @@ def shop_details(request , pk):
         'shop' : shop,
         'comments' : shop_comment,
         'comment_form' : comment_form})
+
+
+class TeamPlayersView(generic.ListView):
+    model = TeamPlayer
+    template_name = 'page_team/team.html'
+    context_object_name = 'players'

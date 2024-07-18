@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import TeamNews , TeamShop , TeamGallery
+from .models import TeamNews , TeamShop , TeamGallery , TeamPlayer
 
 
 class TeamNewsAdmin(admin.ModelAdmin):
@@ -12,3 +12,5 @@ class TeamShopAdmin(admin.ModelAdmin):
 admin.site.register(TeamNews , TeamNewsAdmin)
 admin.site.register(TeamShop , TeamShopAdmin)
 admin.site.register(TeamGallery , TeamNewsAdmin)
+admin.site.register(TeamPlayer )
+
