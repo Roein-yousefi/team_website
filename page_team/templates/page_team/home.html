@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="{% static 'css/mycss.css' %}">
         <style>
             .bg-black {
-                background-color: rgb(60, 0, 42);
+                background-color: rgb(255, 0, 89);
                 color: white; /* برای اطمینان از خوانایی متن */
             }
         </style>
@@ -31,32 +31,30 @@
                                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
                                     {% for news in model1 %}
                                         <div>
-                                            <div class="shadow rounded feature-item" data-aos="fade-up">
-                                                <div class="card-container">
-                                                    <div class="card border-black"
-                                                         style="display: flex; flex-direction: column; height: 100%;">
-                                                        <div class="img-content"
-                                                             style="flex: 1 0 auto; overflow: hidden;">
-                                                            <img src="{{ news.image.url }}"
-                                                                 class="card-img-top"
-                                                                 alt="..."
-                                                                 style="width: 100%; height: 100%; object-fit: cover;">
+                                            <a href="{{ news.get_absolute_url }}"
+                                               style="text-decoration: none; color: inherit;">
+                                                <div class="shadow rounded feature-item" data-aos="fade-up">
+                                                    <div class="card-container">
+                                                        <div class="card border-black"
+                                                             style="display: flex; flex-direction: column; height: 100%;">
+                                                            <div class="img-content"
+                                                                 style="flex: 1 0 auto; overflow: hidden;">
+                                                                <img src="{{ news.image.url }}" class="card-img-top"
+                                                                     alt="..."
+                                                                     style="width: 100%; height: 100%; object-fit: cover;">
+                                                            </div>
+                                                            <div class="content" style="padding: 16px; flex: 0 0 auto;">
+                                                                <p class="heading">{{ news.title }}</p>
+                                                                <p>{{ news.description|truncatewords:10 }}</p>
+                                                            </div>
+
                                                         </div>
-                                                        <div class="content" style="padding: 16px; flex: 0 0 auto;">
-                                                            <p class="heading">{{ news.title }}</p>
-                                                            <p>{{ news.description|truncatewords:10 }}</p>
-                                                        </div>
-                                                        <a href="{% url 'news' %}" style="flex: 0 0 auto;">
-                                                            <button id="bottone1"
-                                                                    style="width: 100%; padding: 16px; font-weight: bold; border: none; background-color: #007bff; color: white;">
-                                                                <strong>اخبار پرسپولیس</strong>
-                                                            </button>
-                                                        </a>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </div>
                                     {% endfor %}
+
                                 </div>
 
 
@@ -132,14 +130,15 @@
                             </div><!--/ .col-md-4.col-md-offset-right-2.col-sm-6 -->
 
                             <div class="col-md-4 offset-md-right-2 col-sm-6 bg-black" data-aos="fade-left">
-                                <h2 class="mb-4" style="color: white; font-weight: bold;">تیم و اعضای کادر فنی</h2>
-                                <h3 style="color: white">برای دیدن بیوگرافی تمامی بازیکنان و کادر فنی فعلی کلیک
+                                <h2 class="mb-4" style="color: white; font-weight: bold; ">تیم و اعضای کادر فنی</h2>
+                                <h3 style="color: white; ">برای دیدن بیوگرافی تمامی بازیکنان و کادر فنی فعلی کلیک
                                     کنید</h3>
                                 <buttoon class="learn-more">
                                       <span class="circle" aria-hidden="true">
                                       <span class="icon arrow"></span>
                                       </span>
-                                    <a href="{% url 'team' %}"><span class="buttoon-text" style="font-weight: bold; font-size: large">مشاهده</span></a>
+                                    <a href="{% url 'team' %}"><span class="buttoon-text"
+                                                                     style="font-weight: bold; font-size: large">مشاهده</span></a>
 
                                 </buttoon>
 
@@ -155,275 +154,106 @@
         </div><!--/ .container -->
 
     </section>    <!-- Testimonial Section-->
-    <section id="testimonial" class="section-padding bg-fixed bg-dark overlay"
-             style="background-image: url({% static 'img/bg-white.jpg' %});">
-        <div class="container">
-            <div class="section-content" data-aos="fade-up">
-                <div class="heading-section text-center">
-                    <h2>
-                        User Testimonials
-                    </h2>
-                </div>
-                <div class="row">
-                    <!-- Testimonial -->
-                    <div class="testi-content testi-carousel owl-carousel">
-                        <div class="testi-item text-center">
-                            <i class="testi-icon fa fa-3x fa-quote-left"></i>
-                            <h4 class="testi-text"><b>ROXY</b> is best theme i used so far.<br> It’s ideal for guys
-                                without coding knowledge like me!</h4>
-                            <div class="testi-meta-inner d-flex justify-content-center align-items-center">
-                                <div class="testi-img mr-2">
-                                    <img src="{% static 'img/testi-1.jpg' %}" alt="">
-                                </div>
-                                <div class="testi-details">
-                                    <p class="testi-author mb-0 font-weight-bolder">John Doe</p>
-                                    <p class="testi-desc mb-0">Web Designer</p>
-                                </div>
-                            </div>
 
-                        </div>
-                        <div class="testi-item text-center">
-                            <i class="testi-icon fa fa-3x fa-quote-left"></i>
-                            <h4 class="testi-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-                                <br> non doloribus ut, alias doloremque perspiciatis.</h4>
-                            <div class="testi-meta-inner d-flex justify-content-center align-items-center">
-                                <div class="testi-img mr-2">
-                                    <img src="{% static 'img/testi-1.jpg' %}" alt="">
-                                </div>
-                                <div class="testi-details">
-                                    <p class="testi-author mb-0 font-weight-bolder">John Doe</p>
-                                    <p class="testi-desc mb-0">Web Designer</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testi-item text-center">
-                            <i class="testi-icon fa fa-3x fa-quote-left"></i>
-                            <h4 class="testi-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-                                <br> non doloribus ut, alias doloremque perspiciatis.</h4>
-                            <div class="testi-meta-inner d-flex justify-content-center align-items-center">
-                                <div class="testi-img mr-2">
-                                    <img src="{% static 'img/testi-1.jpg' %}" alt="">
-                                </div>
-                                <div class="testi-details">
-                                    <p class="testi-author mb-0 font-weight-bolder">John Doe</p>
-                                    <p class="testi-desc mb-0">Web Designer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End of Testimonial -->
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- End of Testimonial Section-->    <!-- Portfolio Section -->
-    <section id="portfolio" class="bg-black">
-        <div class="container">
-            <div class="section-content">
-                <!-- Section Title -->
-                <div class="title-wrap">
-                    <h2 class="section-title" style="color: white; font-weight: bold;">آخرین <b>عکس های</b> گالری</h2>
 
-                </div>
-                <!-- End of Section Title -->
-                <div class="row">
-                    <!-- Portfolio Holder -->
-                    <div class="col-md-12 portfolio-holder mt-3">
-                        <!-- Btn Filter -->
+    <!-- End of Portfolio Section -->    <!-- Client Section -->
 
-                        <!-- End of Btn Filter -->
-                        <!-- Portfolio Content -->
-                        <div class="grid-portfolio">
-                            <div class="grid-sizer"></div>
-                            <div class="gutter-sizer"></div>
-                            <!-- Portfolio Item -->
-                            <div class="grid-item minimalism" data-aos="fade-up">
-                                <div class="grid-item-wrapper">
-                                    <img src="{% static 'img/R.png' %}" alt="portfolio-img"
-                                         class="portfolio-item">
-                                    <div class="grid-info">
-                                        <div class="grid-link d-flex justify-content-center">
-                                            <a class="img-pop" data-rel="lightcase"
-                                               href="{% static 'img/photo-1.jpg' %}"
-                                               title="Photo-1">
-                                                <span class="lnr lnr-move"></span>
-                                            </a>
-                                            <a class="ext-link" href="https://unsplash.com/" target="_blank">
-                                                <span class="lnr lnr-link"></span>
-                                            </a>
-                                        </div>
-                                        <div class="grid-title">
-                                            <h4>Camera</h4>
-                                        </div>
-                                    </div>
-
-                                </div>
+    <section id="section-featurettes" class="featurettes overlay bg-fixed" style="background-image: url(img/bg.jpg);">
+        <div class="jumbotron d-flex align-items-center"
+             style="background: url('{% static "img/Slider-Ghahremani-min.png" %}') no-repeat center center; background-size: cover; min-height: 300px;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7);"></div>
+            <div class="container" style="position: relative; z-index: 2;">
+                <div class="section-content" data-aos="fade-up">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Section Title -->
+                            <div class="title-wrap mb-5" style="text-align: center;">
+                                <h2 style="font-size: 3.5em; color: #ffd700; text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700; font-weight: bold; letter-spacing: 2px;">
+                                    افتخارات باشگاه</h2>
                             </div>
-                            <!-- End of Portfolio Item -->
-                            <!-- Portfolio Item -->
-                            <div class="grid-item vintage" data-aos="fade-up">
-                                <div class="grid-item-wrapper">
-                                    <img src="{% static 'img/R.png' %}" alt="portfolio-img"
-                                         class="portfolio-item">
-                                    <div class="grid-info">
-                                        <div class="grid-link d-flex justify-content-center">
-                                            <a class="img-pop" data-rel="lightcase"
-                                               href="{% static 'img/R.png' %}" title="Ship">
-                                                <span class="lnr lnr-move"></span>
-                                            </a>
-                                            <a class="ext-link" href="https://unsplash.com/" target="_blank">
-                                                <span class="lnr lnr-link"></span>
-                                            </a>
-                                        </div>
-                                        <div class="grid-title">
-                                            <h4>Flower</h4>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- End of Portfolio Item -->
-                            <!-- Portfolio Item -->
-                            <div class="grid-item creative grid-item-height" data-aos="fade-up">
-                                <div class="grid-item-wrapper">
-                                    <img src="{% static 'img/R.png' %}" alt="portfolio-img"
-                                         class="portfolio-item">
-                                    <div class="grid-info">
-                                        <div class="grid-link d-flex justify-content-center">
-                                            <a class="img-pop" data-rel="lightcase"
-                                               href="{% static 'img/R.png' %}"
-                                               title="Tracy Portrait">
-                                                <span class="lnr lnr-move"></span>
-                                            </a>
-                                            <a class="ext-link" href="https://unsplash.com/" target="_blank">
-                                                <span class="lnr lnr-link"></span>
-                                            </a>
-                                        </div>
-                                        <div class="grid-title">
-                                            <h4>Breakfast</h4>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- End of Portfolio Item -->
-                            <!-- Portfolio Item -->
-                            <div class="grid-item creative" data-aos="fade-up">
-                                <div class="grid-item-wrapper">
-                                    <img src="{% static 'img/R.png' %}" alt="portfolio-img"
-                                         class="portfolio-item">
-                                    <div class="grid-info">
-                                        <div class="grid-link d-flex justify-content-center">
-                                            <a class="img-pop" data-rel="lightcase"
-                                               href="{% static 'img/R.png' %}"
-                                               title="Guitar">
-                                                <span class="lnr lnr-move"></span>
-                                            </a>
-                                            <a class="ext-link" href="https://unsplash.com/" target="_blank">
-                                                <span class="lnr lnr-link"></span>
-                                            </a>
-                                        </div>
-                                        <div class="grid-title">
-                                            <h4>Chair</h4>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- End of Portfolio Item -->
-                            <!-- Portfolio Item -->
-                            <div class="grid-item vintage" data-aos="fade-up">
-                                <div class="grid-item-wrapper">
-                                    <img src="{% static 'img/R.png' %}" alt="portfolio-img"
-                                         class="portfolio-item">
-                                    <div class="grid-info">
-                                        <div class="grid-link d-flex justify-content-center">
-                                            <a class="img-pop" data-rel="lightcase"
-                                               href="{% static 'img/R.png' %}"
-                                               title="Bookself">
-                                                <span class="lnr lnr-move"></span>
-                                            </a>
-                                            <a class="ext-link" href="https://unsplash.com/" target="_blank">
-                                                <span class="lnr lnr-link"></span>
-                                            </a>
-                                        </div>
-                                        <div class="grid-title">
-                                            <h4>Hidden Book</h4>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- End of Portfolio Item -->
-                            <!-- Portfolio Item -->
-                            <div class="grid-item creative" data-aos="fade-up">
-                                <div class="grid-item-wrapper">
-                                    <img src="{% static 'img/R.png' %}" alt="portfolio-img"
-                                         class="portfolio-item">
-                                    <div class="grid-info">
-                                        <div class="grid-link d-flex justify-content-center">
-                                            <a class="img-pop" data-rel="lightcase"
-                                               href="{% static 'img/R.png' %}"
-                                               title="Guitar">
-                                                <span class="lnr lnr-move"></span>
-                                            </a>
-                                            <a class="ext-link" href="https://unsplash.com/" target="_blank">
-                                                <span class="lnr lnr-link"></span>
-                                            </a>
-                                        </div>
-                                        <div class="grid-title">
-                                            <h4>Red</h4>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- End of Portfolio Item -->
+                            <!-- End of Section Title -->
                         </div>
-                        <!-- End of Portfolio Content -->
+                        <!-- Client Holder -->
+                        <div class="col-md-12 client-holder">
+                            <div class="client-slider owl-carousel">
+                                <div class="client-item" style="text-align: center; padding: 20px;">
+                                    <div style="background: linear-gradient(145deg, #c51e3a, #ff2d4a); border-radius: 50%; width: 200px; height: 200px; display: flex; justify-content: center; align-items: center; margin: 0 auto; box-shadow: 0 10px 30px rgba(255,45,74,0.3), inset 0 0 15px rgba(255,255,255,0.5); transition: all 0.3s ease;">
+                                        <img class="img-responsive" src="{% static 'img/OIP.png' %}" alt=" "
+                                             style="max-width: 70%; max-height: 70%; filter: drop-shadow(0 0 10px rgba(255,255,255,0.8));">
+                                    </div>
+                                    <h3 style="font-size: 4em; color: #ffd700; margin-top: 20px; text-shadow: 0 0 10px #ffd700; font-weight: bold;">
+                                        16</h3>
+                                    <p style="color: #fff; font-size: 1.2em; margin-top: 10px;">قهرمانی لیگ برتر</p>
+                                </div>
+                                <div class="client-item" style="text-align: center; padding: 20px;">
+                                    <div style="background: linear-gradient(145deg, #c51e3a, #ff2d4a); border-radius: 50%; width: 200px; height: 200px; display: flex; justify-content: center; align-items: center; margin: 0 auto; box-shadow: 0 10px 30px rgba(255,45,74,0.3), inset 0 0 15px rgba(255,255,255,0.5); transition: all 0.3s ease;">
+                                        <img class="img-responsive" src="{% static 'img/adada.png' %}" alt=" "
+                                             style="max-width: 70%; max-height: 70%; filter: drop-shadow(0 0 10px rgba(255,255,255,0.8));">
+                                    </div>
+                                    <h3 style="font-size: 4em; color: #ffd700; margin-top: 20px; text-shadow: 0 0 10px #ffd700; font-weight: bold;">
+                                        9</h3>
+                                    <p style="color: #fff; font-size: 1.2em; margin-top: 10px;">قهرمانی جام حذفی</p>
+                                </div>
+                                <div class="client-item" style="text-align: center; padding: 20px;">
+                                    <div style="background: linear-gradient(145deg, #c51e3a, #ff2d4a); border-radius: 50%; width: 200px; height: 200px; display: flex; justify-content: center; align-items: center; margin: 0 auto; box-shadow: 0 10px 30px rgba(255,45,74,0.3), inset 0 0 15px rgba(255,255,255,0.5); transition: all 0.3s ease;">
+                                        <img class="img-responsive" src="{% static 'img/aOIP.png' %}" alt=" "
+                                             style="max-width: 70%; max-height: 70%; filter: drop-shadow(0 0 10px rgba(255,255,255,0.8));">
+                                    </div>
+                                    <h3 style="font-size: 4em; color: #ffd700; margin-top: 20px; text-shadow: 0 0 10px #ffd700; font-weight: bold;">
+                                        7</h3>
+                                    <p style="color: #fff; font-size: 1.2em; margin-top: 10px;">قهرمانی سوپر جام</p>
+                                </div>
+                                <div class="client-item" style="text-align: center; padding: 20px;">
+                                    <div style="background: linear-gradient(145deg, #c51e3a, #ff2d4a); border-radius: 50%; width: 200px; height: 200px; display: flex; justify-content: center; align-items: center; margin: 0 auto; box-shadow: 0 10px 30px rgba(255,45,74,0.3), inset 0 0 15px rgba(255,255,255,0.5); transition: all 0.3s ease;">
+                                        <img class="img-responsive" src="{% static 'img/cs.png' %}" alt=" "
+                                             style="max-width: 70%; max-height: 70%; filter: drop-shadow(0 0 10px rgba(255,255,255,0.8));">
+                                    </div>
+                                    <h3 style="font-size: 4em; color: #ffd700; margin-top: 20px; text-shadow: 0 0 10px #ffd700; font-weight: bold;">
+                                        1</h3>
+                                    <p style="color: #fff; font-size: 1.2em; margin-top: 10px;">قهرمانی آسیا</p>
+                                </div>
+                            </div>
+                            <!-- End of Client Holder -->
+                        </div>
                     </div>
-                    <!-- End of Portfolio Holder -->
                 </div>
             </div>
         </div>
     </section>
-    <!-- End of Portfolio Section -->    <!-- Client Section -->
-    <section id="client" class="overlay bg-fixed" style="background-image: url(img/bg.jpg);">
-        <div class="container">
-            <div class="section-content" data-aos="fade-up">
-                <div class="row ">
-                    <div class="col-md-12">
-                        <!-- Section Title -->
-                        <div class="title-wrap mb-5">
-                            <h2>جام های باشگاه</h2>
-                        </div>
-                        <!-- End of Section Title -->
-                    </div>
-                    <!-- Client Holder -->
-                    <div class="col-md-12 client-holder">
-                        <div class="client-slider owl-carousel">
-                            <div class="client-item">
-                                <img class="img-responsive" src="{% static 'img/OIP.png' %}" alt=" ">
-                                <h3>16</h3>
-                            </div>
-                            <div class="client-item">
-                                <img class="img-responsive" src="{% static 'img/adada.png' %}" alt=" ">
-                                <h3>9</h3>
-                            </div>
-                            <div class="client-item">
-                                <img class="img-responsive" src="{% static 'img/aOIP.png' %}" alt=" ">
-                                <h3>7</h3>
-                            </div>
-                            <div class="client-item">
-                                <img class="img-responsive" src="{% static 'img/cs.png' %}" alt=" ">
-                                <h3>1</h3>
-                            </div>
 
-                        </div>
-                        <!-- End of Client Holder -->
-                    </div>
-                </div>
-            </div>
-    </section>
+    <style>
+        .client-item:hover div {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 15px 40px rgba(255, 45, 74, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.6);
+        }
+
+        .client-item:hover h3 {
+            transform: scale(1.1);
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $(".client-slider").owlCarousel({
+                items: 4,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            });
+        });
+    </script>
     <!-- End of Client Section -->    <!-- Reservation Section -->
 {% endblock content %}

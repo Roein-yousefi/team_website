@@ -73,7 +73,7 @@
                     <a class="nav-link" href="{% url 'shop' %}">فروشگاه</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">پرسپولیس</a>
+                    <a class="nav-link" href="{% url 'team' %}">پرسپولیس</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact.html">ارتباط با ما</a>
@@ -127,7 +127,7 @@
 
 <!-- Jumbotron with background image -->
 <div class="jumbotron d-flex align-items-center"
-     style="background: url('{% static "img/5910919.jpg" %}') no-repeat center center; background-size: cover;">
+     style=" background: url('{% static "img/5910919.jpg" %}') no-repeat center center; background-size: cover; ">
     <div class="container text-center ">
         <img class="my-5" src="{% static 'img/Persepolis_FC_sticker.png' %}" alt=""
              style="width: 450px; height: 450px;">
@@ -163,8 +163,7 @@
 
             </div>
             <div class="col-lg-4 col-md-12 d-flex align-items-center">
-                <p class="mx-auto text-center mb-0">&copy; 2019 Roxy. Design by <a href="https://gettemplates.co"
-                                                                                   target="_blank">GetTemplates</a>.</p>
+                <p class="mx-auto text-center mb-0">پروژه تمرینی سازنده : Roein Yousefi</p>
             </div>
 
             <div class="col-lg-4 col-md-12">

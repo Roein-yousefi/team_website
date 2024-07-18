@@ -16,7 +16,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background: #191c29;
+    background: linear-gradient(to right, #ff00cb, #ff0000);
     font-family: 'Roboto', sans-serif;
 }
 
