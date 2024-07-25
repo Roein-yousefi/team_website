@@ -77,14 +77,6 @@
             font-size: 1.5em;
             margin-bottom: 10px;
         }
-        .comments-section {
-            width: 100%;
-            max-width: 1000px;
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-        }
     </style>
 </head>
 <body>
@@ -100,8 +92,8 @@
             </div>
 
             <div class="product-info">
-                <h2 id="product-name">{{ shop.title }}</h2>
-                <p id="product-price">قیمت: <span>{{ shop.price }}</span> تومان</p>
+                <h2 id="product-name" style="color: white">{{ shop.title }}</h2>
+                <p id="product-price" style="color: white">قیمت: <span>{{ shop.price }}</span> تومان</p>
                 <div class="size-selector">
                     <select id="size-select">
                         <option value="">انتخاب سایز</option>
@@ -114,8 +106,8 @@
                 <button class="add-to-cart" onclick="addToCart()">افزودن به سبد خرید</button>
 
                 <div class="product-description">
-                    <h3>توضیحات محصول</h3>
-                    <p>{{ shop.description }}</p>
+                    <h3 style="color: white">توضیحات محصول</h3>
+                    <p style="color: white">{{ shop.description }}</p>
                 </div>
             </div>
         </main>
@@ -129,7 +121,7 @@
             </form>
         </div>
 
-        <div class="comments-section" style="width: 100%; max-width: 1000px; background-color: rgba(77,76,79,0.9);" >
+        <div class="comments-section" style="width: 100%; max-width: 1000px; margin: 0 auto; background-color: rgba(77,76,79,0.9);">
             <h2 style="margin-bottom: 20px; color: white">نظرات:</h2>
             {% for comment in comments %}
                 {% if comment.active %}
@@ -164,4 +156,3 @@
 </html>
 
 {% endblock content %}
-
