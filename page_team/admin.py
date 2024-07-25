@@ -9,8 +9,12 @@ class TeamShopAdmin(admin.ModelAdmin):
     list_display = ('title' , 'datetime_created' , 'price')
 
 
+class TeamPlayerAdmin(admin.ModelAdmin):
+    list_display = ('name' , 'position')
+
+
 admin.site.register(TeamNews , TeamNewsAdmin)
 admin.site.register(TeamShop , TeamShopAdmin)
 admin.site.register(TeamGallery , TeamNewsAdmin)
-admin.site.register(TeamPlayer )
+admin.site.register(TeamPlayer , TeamPlayerAdmin)
 
