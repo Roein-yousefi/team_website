@@ -29,8 +29,8 @@
         <title>Some Title</title>
 
     </head>
-    <body>
-    <div class="d-flex justify-content-center mt-5" dir="rtl">
+    <body >
+    <div class="d-flex justify-content-center mt-5" dir="rtl"">
         <div class="col-xl-3 col-lg-4 col-md-5 col-sm-5 col-xs-6 bg-white m-3 m-sm-5 border rounded px-4 pt-4 pb-3 shadow">
             <form method="post">
                 {% csrf_token %}
@@ -38,7 +38,7 @@
                 {{ form|crispy }}
                 <button type="submit" class="btn btn-success mt-3 w-100">ورود</button>
                 <div class="line-with-middle-sep">
-                  <span>
+                  <span style="justify-content: center">
                     یا
                   </span>
                 </div>
